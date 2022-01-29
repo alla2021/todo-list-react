@@ -1,0 +1,11 @@
+.header {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__logo{
+    color:green;
+    font-size: 40px;
+  }
+}
