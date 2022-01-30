@@ -1,0 +1,22 @@
+.todo {
+  border: 1px solid green;
+  background-color: rgb(250, 253, 223);
+  margin: 0 auto 5px;
+  padding: 20px 10px;
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  &__wrapper {
+    height: 40px;
+  }
+}
+
+.delete-btn, .complete-btn {
+  color: white;
+  background-color: green;
+  border: none;
+  height: 40px;
+  width: 40px;
+}
+
+.complete-btn{ margin-right: 5px;}

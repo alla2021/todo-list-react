@@ -1,0 +1,25 @@
+.todo-input {
+  height: 40px;
+  width: 300px;
+  border-color: green;
+}
+
+.todo-btn {
+  height: 40px;
+  width: 60px;
+}
+
+ul {
+  list-style: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.2;
+}
+
+.todo-btn {
+  color: white;
+  background-color: green;
+  border: none;
+}
