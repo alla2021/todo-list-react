@@ -1,6 +1,6 @@
 import React from "react";
-import './form.scss';
-// import SelectFilter from '../SelectFilter';
+import "./form.scss";
+import PropTypes from "prop-types";
 
 function TodoForm({ inputText, setInputText, todos, setTodos }) {
   const inputTextHandler = (e) => {
@@ -28,15 +28,25 @@ function TodoForm({ inputText, setInputText, todos, setTodos }) {
           type="text"
           placeholder="Add a todo"
           name="text"
-         todo-input className="todo-input"
+          todo-input
+          className="todo-input"
           value={inputText}
         />
         <button className="todo-btn" type="submit" onClick={submitTodoHandler}>
-          <i class="fas fa-plus"></i>
+          <i className="fas fa-plus"></i>
         </button>
       </form>
     </>
   );
 }
+
+TodoForm.propTypes = {
+  optionalUnion: PropTypes.shape({
+    inputText: PropTypes.string.isRequired,
+    setInputText: PropTypes.array.isRequired,
+    todos: PropTypes.string.isRequired,
+    setTodos: PropTypes.array.isRequired,
+  }),
+};
 
 export default TodoForm;

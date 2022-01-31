@@ -1,5 +1,6 @@
 import React from "react";
 import ToDoItem from "../ToDoItem";
+import PropTypes from "prop-types";
 
 const TodoList = ({ todos, setTodos }) => {
   return (
@@ -15,6 +16,13 @@ const TodoList = ({ todos, setTodos }) => {
         ))}
       </ul>
   );
+};
+
+TodoList.propTypes = {
+  optionalUnion: PropTypes.shape({
+    todos: PropTypes.array.isRequired,
+    setTodos: PropTypes.array.isRequired,
+  }),
 };
 
 export default TodoList;

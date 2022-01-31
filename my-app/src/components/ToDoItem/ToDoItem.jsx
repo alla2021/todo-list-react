@@ -1,11 +1,11 @@
 import React from "react";
-import './todoitem.scss';
-
+import "./todoitem.scss";
+import PropTypes from "prop-types";
 
 const ToDoItem = ({ text, todo, todos, setTodos }) => {
   const deleteHandler = () => {
     setTodos(todos.filter((el) => el.id !== todo.id));
-    console.log(todo);
+    console.log('delete todo',todo);
   };
 
   const completeHandler = () => {
@@ -24,17 +24,30 @@ const ToDoItem = ({ text, todo, todos, setTodos }) => {
 
   return (
     <div className="todo">
-      <li className={`todo___item ${todo.completed ? "completed" : ""}`}>{text}</li>
+      <li className={`todo__item ${todo.completed ? "completed" : ""}`}>
+        {text}
+      </li>
       <div className="todo__wrapper">
-      <button onClick={completeHandler} className="complete-btn">
-      <i class="fas fa-check"></i>
-      </button>
-      <button onClick={deleteHandler} className="delete-btn">
-      <i class="far fa-trash-alt"></i>
-      </button>
+        <input
+          type="checkbox"
+          onClick={completeHandler}
+          className="complete-checkbox"
+          ></input>
+        <button onClick={deleteHandler} className="delete-btn">
+          <i class="far fa-trash-alt"></i>
+        </button>
       </div>
     </div>
   );
+};
+
+ToDoItem.propTypes = {
+  optionalUnion: PropTypes.shape({
+    text: PropTypes.string.isRequired,
+    todos: PropTypes.array.isRequired,
+    todo: PropTypes.object.isRequired,
+    setTodos: PropTypes.array.isRequired,
+  }),
 };
 
 export default ToDoItem;
